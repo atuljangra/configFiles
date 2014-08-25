@@ -1,0 +1,79 @@
+
+####Text color:
+default_color white
+color1 0ABFFF
+color2 DD4B14
+
+####Choose one of the following: Either window is transparent, or it has a background color:
+own_window_transparent yes
+#own_window_argb_visual yes
+
+####Background color:
+own_window_colour black
+
+####Background transparency (0..255):
+own_window_argb_value 200
+
+own_window yes
+own_window_type conky
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+
+draw_shades yes
+draw_outline no
+draw_borders no
+
+total_run_times 0
+
+use_xft yes
+
+no_buffers yes
+
+short_units yes
+
+update_interval 1
+
+double_buffer yes
+
+alignment top_right
+gap_x 18
+gap_y 50
+
+maximum_width 300
+
+TEXT
+${font DejaVuSansCondensed-Bold:size=26}${color1}$alignr${time %H:%M}$font
+${font DejaVuSansCondensed-Bold:size=11}${color1}$alignr${time %A, %d.%B %Y}
+
+${voffset 5}${color}Uptime:${color1}$alignr$uptime
+${color}Kernel:${color1}$alignr$kernel
+Processes: ${alignr}$processes ($running_processes running)
+
+${voffset 10}${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}1:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 0:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu1 9,140}  ${alignr}${color1}${freq_g cpu1} GHz
+ ${goto 100}${color2}${cpubar cpu5 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}2:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 1:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu2 9,140}  ${alignr}${color1}${freq_g cpu2} GHz
+ ${goto 100}${color2}${cpubar cpu6 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}3:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 2:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu3 9,140}  ${alignr}${color1}${freq_g cpu3} GHz
+ ${goto 100}${color2}${cpubar cpu7 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}4:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 3:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu4 9,140}  ${alignr}${color1}${freq_g cpu4} GHz
+ ${goto 100}${color2}${cpubar cpu8 9,140}  ${color1} ${font DejaVuSansCondensed-Bold:size=11}
+
+${voffset 10}${color}RAM: ${color1} $alignr${mem} / ${memmax}
+${color2}${membar 9,300}${color1}
+
+${voffset 15}${color}PROCESSES ${color1}${font DejaVuSansCondensed-Bold:size=9}($running_processes active): ${font DejaVuSansCondensed-Bold:size=11}${color}$alignr ID           %        MEM${font DejaVuSansCondensed-Bold:size=9}${color1}
+    ${top name 1} ${goto 160}${top pid 1} ${goto 218}${top cpu 1}
+    ${top name 2} ${goto 160}${top pid 2} ${goto 218}${top cpu 2}
+    ${top name 3} ${goto 160}${top pid 3} ${goto 218}${top cpu 3}
+    ${top name 4} ${goto 160}${top pid 4} ${goto 218}${top cpu 4}
+
+    ${top_mem name 1} ${goto 160}${top_mem pid 1} $alignr${top_mem mem_res 1}
+    ${top_mem name 2} ${goto 160}${top_mem pid 2} $alignr${top_mem mem_res 2}
+    ${top_mem name 3} ${goto 160}${top_mem pid 3} $alignr${top_mem mem_res 3}
+    ${top_mem name 4} ${goto 160}${top_mem pid 4} $alignr${top_mem mem_res 4}
+    ${top_mem name 5} ${goto 160}${top_mem pid 5} $alignr${top_mem mem_res 5}${font DejaVuSansCondensed-Bold:size=11}
+
+${voffset 15}${color}Root: ${color1} ${alignr}${fs_used /} / ${fs_size /}
+${color2}${fs_bar 9,300 /}${color1}
+
+${color}wlan0 IP: ${color1}${alignr}${addr wlan0}
+${color}xenbr0 IP: ${color1}${alignr}${addr xenbr0}
