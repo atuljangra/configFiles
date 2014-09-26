@@ -1,7 +1,7 @@
 
 ####Text color:
 default_color white
-color1 0ABFFF
+color1 0ABFF4
 color2 DD4B14
 
 ####Choose one of the following: Either window is transparent, or it has a background color:
@@ -12,7 +12,7 @@ own_window_transparent yes
 own_window_colour black
 
 ####Background transparency (0..255):
-own_window_argb_value 200
+own_window_argb_value 150
 
 own_window yes
 own_window_type conky
@@ -75,5 +75,19 @@ ${voffset 15}${color}PROCESSES ${color1}${font DejaVuSansCondensed-Bold:size=9}(
 ${voffset 15}${color}Root: ${color1} ${alignr}${fs_used /} / ${fs_size /}
 ${color2}${fs_bar 9,300 /}${color1}
 
-${color}wlan0 IP: ${color1}${alignr}${addr wlan0}
-${color}xenbr0 IP: ${color1}${alignr}${addr xenbr0}
+${if_existing /proc/net/route wlan0}
+   ${color2}Wireless
+   ${color1}${offset 10}IP Address:${alignr}${color1}${addr wlan0}
+   ${color1}${offset 10}Download:${alignr}${color1}${downspeedf wlan0}KB/s
+   ${color1}${offset 10}Upload:${alignr}${color1}${upspeedf wlan0}KB/s
+   ${color1}${offset 10}Strength:${wireless_link_bar wlan0}
+${endif}
+
+${if_existing /proc/net/route eth0}
+   ${color2}Ethernet
+   ${color1}${offset 10}IP Address:${alignr}${color1}${addr eth0}
+   ${color1}${offset 10}Download:${alignr}${color1}${downspeedf eth0}KB/s
+   ${color1}${offset 10}Upload:${alignr}${color1}${upspeedf eth0}KB/s
+${endif}
+
+
