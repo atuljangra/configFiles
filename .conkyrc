@@ -15,7 +15,7 @@ own_window_colour black
 own_window_argb_value 150
 
 own_window yes
-own_window_type conky
+own_window_type Desktop
 own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
 
 draw_shades yes
@@ -48,46 +48,47 @@ ${voffset 5}${color}Uptime:${color1}$alignr$uptime
 ${color}Kernel:${color1}$alignr$kernel
 Processes: ${alignr}$processes ($running_processes running)
 
-${voffset 10}${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}1:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 0:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu1 9,140}  ${alignr}${color1}${freq_g cpu1} GHz
- ${goto 100}${color2}${cpubar cpu5 9,140}  ${color1}
-${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}2:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 1:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu2 9,140}  ${alignr}${color1}${freq_g cpu2} GHz
- ${goto 100}${color2}${cpubar cpu6 9,140}  ${color1}
-${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}3:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 2:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu3 9,140}  ${alignr}${color1}${freq_g cpu3} GHz
- ${goto 100}${color2}${cpubar cpu7 9,140}  ${color1}
-${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}4:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 3:' | cut -c18-21}*C ${goto 100}${color2}${cpubar cpu4 9,140}  ${alignr}${color1}${freq_g cpu4} GHz
- ${goto 100}${color2}${cpubar cpu8 9,140}  ${color1} ${font DejaVuSansCondensed-Bold:size=11}
+${voffset 10}${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}1:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 0:' | cut -c18-21}*C ${goto 100}${color2}  ${cpubar cpu1 9,140}  ${alignr}${color1}${freq_g cpu1} GHz
+ ${goto 100}${color2}  ${cpubar cpu5 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}2:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 1:' | cut -c18-21}*C ${goto 100}${color2}  ${cpubar cpu2 9,140}  ${alignr}${color1}${freq_g cpu2} GHz
+ ${goto 100}${color2}  ${cpubar cpu6 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}3:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 2:' | cut -c18-21}*C ${goto 100}${color2}  ${cpubar cpu3 9,140}  ${alignr}${color1}${freq_g cpu3} GHz
+ ${goto 100}${color2}  ${cpubar cpu7 9,140}  ${color1}
+${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}4:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 3:' | cut -c18-21}*C ${goto 100}${color2}  ${cpubar cpu4 9,140}  ${alignr}${color1}${freq_g cpu4} GHz
+ ${goto 100}${color2}  ${cpubar cpu8 9,140}  ${color1} ${font DejaVuSansCondensed-Bold:size=11}
 
 ${voffset 10}${color}RAM: ${color1} $alignr${mem} / ${memmax}
 ${color2}${membar 9,300}${color1}
 
-${voffset 15}${color}PROCESSES ${color1}${font DejaVuSansCondensed-Bold:size=9}($running_processes active): ${font DejaVuSansCondensed-Bold:size=11}${color}$alignr ID           %        MEM${font DejaVuSansCondensed-Bold:size=9}${color1}
-    ${top name 1} ${goto 160}${top pid 1} ${goto 218}${top cpu 1}
-    ${top name 2} ${goto 160}${top pid 2} ${goto 218}${top cpu 2}
-    ${top name 3} ${goto 160}${top pid 3} ${goto 218}${top cpu 3}
-    ${top name 4} ${goto 160}${top pid 4} ${goto 218}${top cpu 4}
+${voffset 15}${color}Processes${color1}${font DejaVuSansCondensed-Bold:size=9}($running_processes active): ${font DejaVuSansCondensed-Bold:size=11}${color}$alignr ID        %        Mem ${font DejaVuSansCondensed-Bold:size=9}${color1}
 
-    ${top_mem name 1} ${goto 160}${top_mem pid 1} $alignr${top_mem mem_res 1}
-    ${top_mem name 2} ${goto 160}${top_mem pid 2} $alignr${top_mem mem_res 2}
-    ${top_mem name 3} ${goto 160}${top_mem pid 3} $alignr${top_mem mem_res 3}
-    ${top_mem name 4} ${goto 160}${top_mem pid 4} $alignr${top_mem mem_res 4}
-    ${top_mem name 5} ${goto 160}${top_mem pid 5} $alignr${top_mem mem_res 5}${font DejaVuSansCondensed-Bold:size=11}
+    ${top name 1} ${goto 150}${top pid 1} ${goto 200}${top cpu 1}
+    ${top name 2} ${goto 150}${top pid 2} ${goto 200}${top cpu 2}
+    ${top name 3} ${goto 150}${top pid 3} ${goto 200}${top cpu 3}
+    ${top name 4} ${goto 150}${top pid 4} ${goto 200}${top cpu 4}
+
+    ${top_mem name 1} ${goto 150}${top_mem pid 1} $alignr${top_mem mem_res 1}
+    ${top_mem name 2} ${goto 150}${top_mem pid 2} $alignr${top_mem mem_res 2}
+    ${top_mem name 3} ${goto 150}${top_mem pid 3} $alignr${top_mem mem_res 3}
+    ${top_mem name 4} ${goto 150}${top_mem pid 4} $alignr${top_mem mem_res 4}
+    ${top_mem name 5} ${goto 150}${top_mem pid 5} $alignr${top_mem mem_res 5}${font DejaVuSansCondensed-Bold:size=11}
 
 ${voffset 15}${color}Root: ${color1} ${alignr}${fs_used /} / ${fs_size /}
 ${color2}${fs_bar 9,300 /}${color1}
 
 ${if_existing /proc/net/route wlan0}
-   ${color2}Wireless
-   ${color1}${offset 10}IP Address:${alignr}${color1}${addr wlan0}
-   ${color1}${offset 10}Download:${alignr}${color1}${downspeedf wlan0}KB/s
-   ${color1}${offset 10}Upload:${alignr}${color1}${upspeedf wlan0}KB/s
-   ${color1}${offset 10}Strength:${wireless_link_bar wlan0}
+${color2}Wireless
+   ${color1}IP Address:${alignr}${color1}${addr wlan0}
+   ${color1}Download:${alignr}${color1}${downspeedf wlan0}KB/s
+   ${color1}Upload:${alignr}${color1}${upspeedf wlan0}KB/s
+   ${color1}Strength:${color2}  ${wireless_link_bar wlan0}
 ${endif}
 
 ${if_existing /proc/net/route eth0}
-   ${color2}Ethernet
-   ${color1}${offset 10}IP Address:${alignr}${color1}${addr eth0}
-   ${color1}${offset 10}Download:${alignr}${color1}${downspeedf eth0}KB/s
-   ${color1}${offset 10}Upload:${alignr}${color1}${upspeedf eth0}KB/s
+${color2}Ethernet
+   ${color1}IP Address:${alignr}${color1}${addr eth0}
+   ${color1}Download:${alignr}${color1}${downspeedf eth0}KB/s
+   ${color1}Upload:${alignr}${color1}${upspeedf eth0}KB/s
 ${endif}
 
 
