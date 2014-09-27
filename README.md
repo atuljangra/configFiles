@@ -1,4 +1,5 @@
 configFiles
 ===========
 
-Contails some commonly used config files.
+Contains some commonly used config files.
+Most of them were initially stolen shamelessly from the Internet.
