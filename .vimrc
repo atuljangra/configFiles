@@ -468,3 +468,4 @@ endfunction
 
 " Setting clumn marker at 80
 set colorcolumn=80
+set showcmd
