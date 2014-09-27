@@ -74,7 +74,6 @@ ${voffset 15}${color}Processes${color1}${font DejaVuSansCondensed-Bold:size=9}($
 
 ${voffset 15}${color}Root: ${color1} ${alignr}${fs_used /} / ${fs_size /}
 ${color2}${fs_bar 9,300 /}${color1}
-
 ${if_existing /proc/net/route wlan0}
 ${color}Wireless
    ${color1}IP Address:${alignr}${color1}${addr wlan0}
@@ -88,4 +87,3 @@ ${color}Ethernet
    ${color1}Download:${alignr}${color1}${downspeedf eth0}KB/s
    ${color1}Upload:${alignr}${color1}${upspeedf eth0}KB/s
 ${endif}
-
