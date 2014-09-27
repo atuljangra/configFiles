@@ -465,3 +465,6 @@ function! ToggleTaglist()
       let g:tag_list_open = 0 
   endif 
 endfunction 
+
+" Setting clumn marker at 80
+set colorcolumn=80
