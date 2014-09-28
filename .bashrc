@@ -118,3 +118,4 @@ export CSCOPE_DB=$HOME/.cscope/cscope.out
 ##Just Some random cow hitting a bong.
 #fortune | cowsay -f bong
 source ~/.gitbash
+http_proxy="http://10.10.78.62:3128"
