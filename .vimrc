@@ -262,10 +262,11 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-set statusline+=%8*\ %=\ row:%l/%L\ (%03p%%)\             "Rownumber/total (%)
-set statusline+=%9*\ col:%03c\                            "Colnr
-set statusline+=%0*\ \ %m%r%w\ %P\ \                      "Modified? Readonly? Top/bot.
+set statusline=
+set statusline+=%{HasPaste()}%t%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}\ 
+set statusline+=%{HasPaste()}%=\ Line:%l/%L\ (%03p%%)\             "Rownumber/total (%)
+set statusline+=%{HasPaste()}col:%03c\                             "Colnr
+set statusline+=%{HasPaste()}%m%r%w\                       "Modified? Readonly? Top/bot.
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
