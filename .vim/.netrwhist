@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/dushyant/gsoc/code/xen/xen/include'
-let g:netrw_dirhist_2='/home/dushyant/gsoc/code/xen/xen/include/xen'
-let g:netrw_dirhist_3='/home/dushyant/gsoc/code/x'
-let g:netrw_dirhist_4='/home/corvo/.vim/plugin'
-let g:netrw_dirhist_5='/home/corvo/gsoc/images/not-created'
-let g:netrw_dirhist_6='/home/corvo/out-dump/archives'
-let g:netrw_dirhist_7='/home/corvo/.ssh'
-let g:netrw_dirhist_8='/home/atul/.vim'
-let g:netrw_dirhist_9='/home/atul/.vim/colors'
+let g:netrw_dirhist_cnt =0

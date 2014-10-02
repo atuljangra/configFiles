@@ -416,12 +416,8 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" UTKARSH
 set ttyfast
 set mouse=a
-
-" DUSHYANT 
-set tags=$HOME/.cscope/tags
 
 " use ALT plus arrow key to move
 " between windows
@@ -469,6 +465,10 @@ function! ToggleTaglist()
   endif 
 endfunction 
 
-" Setting clumn marker at 80
+" Atul Jangra
+" Setting column marker at 80
 set colorcolumn=80
 set showcmd
+set mouse=a
+" Run ctags -R .
+set tags=tags

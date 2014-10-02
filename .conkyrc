@@ -1,7 +1,7 @@
 
 ####Text color:
-default_color white
-color1 0ABFF4
+default_color white 
+color1 black 
 color2 DD4B14
 
 ####Choose one of the following: Either window is transparent, or it has a background color:
