@@ -1,15 +1,15 @@
 [alias]
-co = commit
-st = status
-br = branch
-hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-type = cat-file -t
-dump = cat-file -p
-
+    co = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    ck = checkout
 [http]
-	proxy = http://10.10.78.62:3128
+#	proxy = http://10.10.78.62:3128
 [https]
-	proxy = https://10.10.78.62:3128
+#	proxy = https://10.10.78.62:3128
 [user]
 	email = atuljangra66@gmail.com
 	name = atuljangra
