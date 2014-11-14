@@ -40,8 +40,8 @@ gap_y 50
 maximum_width 300
 
 TEXT
-${font DejaVuSansCondensed-Bold:size=26}${color1}$alignr${time %I:%M:%S %p}$font
-${font DejaVuSansCondensed-Bold:size=11}${color1}$alignr${time %A, %d.%B %Y}
+${font DejaVuSansCondensed-Bold:size=26}${color}$alignr${time %I:%M:%S %p}$font
+${font DejaVuSansCondensed-Bold:size=11}${color}$alignr${time %A, %d.%B %Y}
 
 ${voffset 5}${color}Uptime:${color1}$alignr$uptime
 ${color}Kernel:${color1}$alignr$kernel
@@ -74,6 +74,9 @@ ${voffset 15}${color}Processes${color1}${font DejaVuSansCondensed-Bold:size=9}($
 
 ${voffset 15}${color}Root: ${color1} ${alignr}${fs_used /} / ${fs_size /}
 ${color2}${fs_bar 9,300 /}${color1}
+    ${color}Disk_read:${alignr}${color1}${diskio_read /dev/sda1}
+    ${color}Disk_write:${alignr}${color1}${diskio_write /dev/sda1}
+
 ${if_existing /proc/net/route wlan0}
 ${color}Wireless:    ${alignr}${wireless_essid wlan0}
    ${color1}IP Address:${alignr}${color1}${addr wlan0}
