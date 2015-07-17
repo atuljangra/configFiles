@@ -7,9 +7,13 @@
     dump = cat-file -p
     ck = checkout
 [http]
-#	proxy = http://10.10.78.62:3128
+#   proxy = http://10.10.78.62:3128
 [https]
-#	proxy = https://10.10.78.62:3128
+#   proxy = https://10.10.78.62:3128
 [user]
 	email = atuljangra66@gmail.com
 	name = atuljangra
+[credential]
+	helper = cache --timeout=432000
+[http]
+	postBuffer = 524288000

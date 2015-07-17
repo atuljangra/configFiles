@@ -1,6 +1,6 @@
 
 ####Text color:
-default_color white 
+default_color green 
 color1 black 
 color2 DD4B14
 
@@ -55,6 +55,7 @@ ${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}3:${color1}${font 
  ${goto 100}${color2}  ${cpubar cpu7 9,140}  ${color1}
 ${font DejaVuSansCondensed-Bold:size=11}${color}CPU ${goto 38}4:${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 sensors | grep 'Core 3:' | cut -c18-21}*C ${goto 100}${color2}  ${cpubar cpu4 9,140}  ${alignr}${color1}${freq_g cpu4} GHz
  ${goto 100}${color2}  ${cpubar cpu8 9,140}  ${color1} ${font DejaVuSansCondensed-Bold:size=11}
+${font DejaVuSansCondensed-Bold:size=11}${color}GPU Temp :${color1}${font DejaVuSansCondensed-Bold:size=9}  ${execi 30 optirun nvidia-settings -c :8 -query GPUCoreTemp | grep Attribute | grep gpu | cut -c45-47}*C
 
 ${voffset 10}${color}RAM: ${color1} $alignr${mem} / ${memmax}
 ${color2}${membar 9,300}${color1}

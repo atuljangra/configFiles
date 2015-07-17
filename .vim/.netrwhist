@@ -1,2 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/atul/Dev/nodejs/express/node-postgres-todo/bin'
+let g:netrw_dirhist_2='/home/atul/Dev/nodejs/express/acad/public'
+let g:netrw_dirhist_3='/home/atul/Dev/nodejs/express/acad/public/javascripts'
+let g:netrw_dirhist_4='/home/atul/Dev/nodejs/express/acad/public'
+let g:netrw_dirhist_5='/home/atul/Dev/nodejs/express/acad/public/javascripts'
+let g:netrw_dirhist_6='/home/atul/Dev/nodejs/express/Nodejs/Acad-temp/public'
+let g:netrw_dirhist_7='/home/atul/Dev/nodejs/express/Nodejs/Acad-temp/public/javascripts'
+let g:netrw_dirhist_8='/home/atul/Dev/rrwebapp/UEA/play_uae_app/app/service'

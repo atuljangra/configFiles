@@ -117,5 +117,18 @@ export CSCOPE_DB=$HOME/.cscope/cscope.out
 
 ##Just Some random cow hitting a bong.
 #fortune | cowsay -f bong
+alias xopen='xdg-open'
 source ~/.gitbash
-http_proxy="http://10.10.78.62:3128"
+phd_proxy="http://10.10.78.61:3128"
+dual_proxy="http://10.10.78.62:3128"
+butc_proxy="http://10.237.23.155:3128"
+http_proxy=""
+
+https_proxy=""
+[ $DISPLAY ] && xset b 100
+export squid_linux=http://10.252.220.244:3128
+export squid_win=http://10.252.221.196:3128
+alias studio='~/Documents/android-studio/bin/studio.sh'
+alias bload="source ~/.bashrc"
+export PATH=$PATH:/home/atul/Dev/play-2.0.4/
+alias rr='cd ~/Dev/rr/'
