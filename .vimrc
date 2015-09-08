@@ -139,7 +139,7 @@ set tm=500
 syntax enable
 
 set t_Co=256
-colorscheme molokai
+" colorscheme molokai
 set background=dark
 
 " Set extra options when running in GUI mode
