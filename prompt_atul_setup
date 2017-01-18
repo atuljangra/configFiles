@@ -4,48 +4,46 @@
 # Authors:
 #   Brian Tse <briankftse@gmail.com>
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-# Screenshots:
-#   http://i.imgur.com/zLZNK.png
+#   Atul Jagra <atuljangra66@gmail.com>
 #
 
 function +vi-git_status {
-  # Check for untracked files or updated submodules since vcs_info does not.
-  if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    hook_com[unstaged]='%F{red}●%f'
-  fi
+# Check for untracked files or updated submodules since vcs_info does not.
+    if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+        hook_com[unstaged]='%F{red}●%f'
+            fi
 }
 
 function prompt_minimal_precmd {
-  vcs_info
-  BOOKMARK=$(_dotfiles_scm_info)
+    vcs_info
+        BOOKMARK=$(_dotfiles_scm_info)
 }
 
 function prompt_minimal_setup {
-  setopt LOCAL_OPTIONS
-  unsetopt XTRACE KSH_ARRAYS
-  prompt_opts=(cr percent subst)
+    setopt LOCAL_OPTIONS
+        unsetopt XTRACE KSH_ARRAYS
+        prompt_opts=(cr percent subst)
 
-  # Load required functions.
-  autoload -Uz add-zsh-hook
-  autoload -Uz vcs_info
+# Load required functions.
+        autoload -Uz add-zsh-hook
+        autoload -Uz vcs_info
 
-  # Add hook for calling vcs_info before each command.
-  add-zsh-hook precmd prompt_minimal_precmd
+# Add hook for calling vcs_info before each command.
+        add-zsh-hook precmd prompt_minimal_precmd
 
-  # Set vcs_info parameters.
-  zstyle ':vcs_info:*' enable bzr git hg svn
-  zstyle ':vcs_info:*' check-for-changes true
-  zstyle ':vcs_info:*' stagedstr '%F{green}●%f'
-  zstyle ':vcs_info:*' unstagedstr '%F{yellow}●%f'
-  zstyle ':vcs_info:*' formats ' - [%b%c%u]'
-  zstyle ':vcs_info:*' actionformats " - [%b%c%u|%F{cyan}%a%f]"
-  zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b|%F{cyan}%r%f'
-  zstyle ':vcs_info:git*+set-message:*' hooks git_status
+# Set editor-info parameters.
 
-  # Define prompts.
-  PROMPT='%2~:${BOOKMARK} %(?..[%?]) » '
-  RPROMPT=''
+        zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+        zstyle ':prezto:module:editor:info:keymap:primary' format '%B%(?;%{%F{green}%} ;%{%F{red}%} )❯%f%b'
+        zstyle ':prezto:module:editor:info:keymap:primary:overwrite' format ' %F{red}♺%f'
+        zstyle ':prezto:module:editor:info:keymap:alternate' format ' %B%F{green}❮%F{yellow}❮%F{red}❮%f%b'
+
+# Define prompts.
+#  PROMPT='%2~:${BOOKMARK} %(?..[%?]) » '
+#  RPROMPT=''
+        PROMPT='%F{cyan}%2~:${BOOKMARK}%(!. %B%F{red}#%f%b.)${editor_info[keymap]} '
+        RPROMPT='${editor_info[overwrite]}${VIM:+" %B%F{green}V%f%b"}${git_info[rprompt]}'
+        SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
 prompt_minimal_setup "$@"
